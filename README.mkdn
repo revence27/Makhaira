@@ -6,7 +6,7 @@ Kin
 ---
 This project is of the same Spirit as the ones below:
 
-* [The Digital Bible Society](http://www.digitalbiblesociety.com/) especially their excellent [inScript](http://www.digitalbiblesociety.com/about/projects.php#inScript) tools.
+* [The Digital Bible Society](http://www.digitalbiblesociety.com/) especially their excellent [inScript](http://www.digitalbiblesociety.com/about/projects.php#inScript) project (which this one is similar-to).
 * [Far-Eastern Broadcasting](http://www.febcanada.org/)
 * [Bibles Unbound](http://www.biblesunbound.com/qry/mc_home.taf) of the great [Voice of the Martyrs](http://www.persecution.com).
 * [Heart Cry Missionary Society](http://www.heartcrymissionary.com/)
