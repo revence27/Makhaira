@@ -1,7 +1,7 @@
 <makhaira>
     <production name="nteng">
         <clay href="Makhaira.java.pre" jar="Makhaira.java" />
-        <zefania href="../xml/nteng.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
+        <zefania href="../xml/nteng.xml" book="Book" chapter="Chapter" load="Open" />
     </production>
     <production name="ntlug">
         <clay href="Makhaira.java.pre" jar="Makhaira.java" />
