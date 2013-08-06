@@ -1,0 +1,18 @@
+<makhaira>
+    <production name="nteng">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/nteng.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
+    </production>
+    <production name="ntlug">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/ntlug.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
+    </production>
+    <production name="gclug">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/gclug.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
+    </production>
+    <production name="gceng">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/gracecore.xml" book="Book" chapter="Chapter" load="Speak, Lord!" />
+    </production>
+</makhaira>

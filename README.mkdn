@@ -1,0 +1,55 @@
+Makhaira: The Smaller Sword
+============
+This code is meant for programmers who want to generate arbitrary Bible packagings as an  executable Java ME application. The Bible packagings can be in any language and any selection of books, and the menu items are also translated.
+
+Kin
+---
+This project is of the same Spirit as the ones below:
+
+* [The Digital Bible Society](http://www.digitalbiblesociety.com/) especially their excellent [inScript](http://www.digitalbiblesociety.com/about/projects.php#inScript) tools.
+* [Far-Eastern Broadcasting](http://www.febcanada.org/)
+* [Bibles Unbound](http://www.biblesunbound.com/qry/mc_home.taf) of the great [Voice of the Martyrs](http://www.persecution.com).
+* [Heart Cry Missionary Society](http://www.heartcrymissionary.com/)
+* [SAT-7](http://www.sat7.org/), the best thing any man has ever placed in the skies above the Muslim world.
+* [Open Doors](http://www.opendoors.org/) which trains preachers and sends them (back) to hostile places.
+* [The Chinese House Church Movement](http://en.wikipedia.org/w/index.php?title=Chinese_house_church&oldid=563557936), or what I like to call “Maoist Christianity”. (I call it that because it was formed under the Mao period, and has a style of evangelism very simlar to Maoist guerilla warfare, which has made China the scene of a shocking and unprecedented increase in number of believers.)
+* [Three-Self Patriotic Movement of China](http://www.ccctspm.org) Not only for fairness’ sake, since I have included their brothers above, but also because I actually consider [Three-Self](http://en.wikipedia.org/w/index.php?title=Three-Self_Patriotic_Movement&oldid=566984419) to be perfectly orthodox and truer in its faith than even other legitimately-Christian groups. More below.
+
+If you can support _those_ efforts, please do.
+
+The Point
+---
+Java Mobile Environment is still the most wide-spread, cheapest, and most-consistent of mobile programming platforms. It is found on many very, very low-end phones, including some of the very cheap Chinese brands. This means that Java computers can be found everywhere that there is a need for the Bible.  
+But the Bible that is lacking on “the market” is one that packs the entire Bible and reading software as a single application. If that is in place, the Bible can be accessed entirely offline on the phone, and it would be as easy to conceal as a small feature-phone would be.  
+Even more, the application should not have two distinct parts (program and database, for instance); the data should be part of the code. That way, with one phone one can move an accessible Bible from phone to phone, via Bluetooth, and be sure that if the file is retained, the Bible is retained.  
+A last problem is that in the exceedingly rare case where such a thing would be necessary, it would not be in English that the Bible is required. So this system should be able to fulfil the requirements above as well as complete localisation, in the menus and, of course, in the data that represents the contents of the Bible.
+
+Bibles & Data Sources
+---
+The XML format that this application expects is the [Zefania XML](http://sourceforge.net/projects/zefania-sharp/) format. This is because not only is it easy to process, Bibles in over 77 languages have been archived [in various places on the Internet](http://www.churchsw.org/bibles) in this format.  
+
+
+Further Information
+---
+The Koine Greek workd “makhaira” indicates a smaller sword than the normal, two-edged, even military-grade sword “xiphos”.  
+The word “makhaira” is used in many instances, but I think the most-engrossing is in [Luke 22:35-38](https://www.biblegateway.com/passage/?interface=print&version=NKJV;TR1894&search=Luke+22:35-38).
+Now, the sword is used in New Testament symbolism to signify the Word of God. Seeing Jesus encouraging His disciples to carry a small sword, even if it means selling the one property—the outer garmet—that is [protected by Law](https://www.biblegateway.com/passage/?interface=print&version=NIV;NKJV&search=Exodus+22:26-27) as the last inviolable posession of the poor man. So clearly carrying a sword of some kind is very important, especially as Jesus gets numbered among the transgressors.
+
+So we created this little JME application. It compiles in two stages. (The Ruby file in the `src` folder is named after the Futamura Projections.) In the first compilation, which is executed with a call to `make` (in particular `make gen`) in the `src` directory. It generates a file of Java code, `Makhaira.java` which is then compiled with the JME developer enviroment to generate a single phone application.
+
+The first compilation pours the Bible into the source code of the application, generating the main code file, `Makhaira.java`. If contains the required books. Special packagings of the Bible can be made: New Testament, for instance, the four gospels, a particular gospel, a particular mix of books, or the whole 66 books. (I move about with a special blend of _Luke_, _John_, _Acts_, and _Romans_; I call it the “Grace Core”, because _Romans_ develops the crucial Grace-Faith doctrine satisfactorily in light of the Lukan histories and _John_.) The packagings are defined in an XML file, which essentilly points out where to get the Zefania XML file out of which to make the Bible application. The configuration can also indicate the words to be used in the menu, since Bibles are in all sorts of languages.
+
+The code that is compile to form the Java source is itself syntactically-correct Java source code. Burried within special comments are pieces of Ruby code which, when executed, print out or return the code that has to replace them in the resulting Java file. So it is actually a compilation from correct Java code that runs badly to correct Java code that runs correctly. The first compilation does this pre-processing.
+
+The resulting `Makhaira.java` has a size that depends directly on the amount of content the resulting Bible will carry.
+
+On The Three-Self Patriotic Movement
+---
+I consider Three-Self to be a legitimate Christian Protestant denomination, no more no less. That it has government approval in an atheist country—and, necessarily, government oversight—is just a chance for the atheists to find that Christianity is all positives. Three-Self was created by God, and preserved by God even as He preserves the rest of us through our bad decisions, and it came out to repentance when the China Christian Council was formed. This ready willingness to repent (change of mind) makes it a far better congregation than many denominations and liturgical hegemonies, such as the Roman Catholic Church (which, when told of its mistakes at the Reformation, chose dignified wrongness rather than the sack-cloth and ashes of “metanoia”).  
+Now, I treat with kindness the Anglican church (to which my family belongs). But this denomination was founded to flout Christian tradition and counsel a king against the prevailing Christian teaching of the time. I do not deny that Anglicans (“we”) are Christian indeed, especially since they are of the sweet Protestant conviction. But for this reason alone, Three-Self (“we”) is also Christian indeed, especially since it is of the sweet Protestant conviction.  
+The role that Three-Self plays in China is no different from—except to be better than—what the Anglican Church plays in England, the Presbyterian Church in Scotland, or the mainline Protestants in the founding of early American colonies. Most of the animosity towards Three-Self is due to a reasonable distrust for the government to which it has sensibly—and justifiably—sworn allegiance. But where such suspicion towards Three-Self is reasonable, it is just as reasonable towards other organisations of Christians. And while Three-Self puts most of them to shame, ecumenical relations should shine a light of mercy, grace, and favour—à la Jesus Christ—rather than on enjoying the self-righteous feeling that comes from being suspicious and unwelcoming of Three-Self just because of the government under which God has subjected it for Hiw own reasons. Do not let the obedience of the Chinese who gather under Three-Self be either a cause for their condemnation (“for against such there is no law”) nor a cause to self-righteously judge those who, for reasons between them and God, do not want to associate with it.
+
+See also:
+---
+* [China, the World’s Largest Christian Nation](http://chinachristiannation.blogspot.com/) an excellent effort by [Enoch Hou](https://plus.google.com/113837710196751913414/posts) to normalise the idea of “Chinese” being uttered in the same breath as “Christian”.
+

@@ -1,0 +1,10 @@
+<makhaira>
+    <production name="gclug">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/gclug.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
+    </production>
+    <production name="gceng">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/gracecore.xml" book="Book" chapter="Chapter" load="Speak, Lord!" />
+    </production>
+</makhaira>

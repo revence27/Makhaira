@@ -1,0 +1,121 @@
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+
+/**
+ * @author The 27th Comrade
+ */
+
+public class Makhaira extends MIDlet implements CommandListener
+{
+    private Command     openBook;
+    private boolean     dug, picked, already;
+    private int         scroll;
+    private Form        biblePage;
+    private TextField   chapter/*, verse1*/;
+    private StringItem  spiel;
+    private String      books[][][];
+    private ChoiceGroup bkList;
+
+    public void startApp()
+    {
+        dug         = false;
+        picked      = false;
+        already     = false;
+        scroll      = 0;
+        spiel       = new StringItem("", "");
+        books       = new String[][][]{null/* bible.as_java */};
+        biblePage   = new Form(null/* bible.name.to_java */);
+        bkList      = new ChoiceGroup(null/* arg[:translation][:book].to_java */, ChoiceGroup.EXCLUSIVE);
+        chapter     = new TextField(null/* arg[:translation][:chapter].to_java */, "1", 3, TextField.NUMERIC);
+        /*//
+        bible.books.each do |book|
+            $lines << %[bkList.append(#{book.name.to_java}, null)]
+        end
+        *///
+        try{bkList.setSelectedIndex(0, true);}catch(Exception e){e.printStackTrace();}
+        biblePage.append(bkList);
+        openBook = new Command(null/* arg[:translation][:fetch].to_java */, Command.OK, 0);
+        biblePage.addCommand(openBook);
+        Display.getDisplay(this).setCurrent(biblePage);
+        biblePage.setCommandListener(this);
+    }
+
+    public void commandAction(Command c, Displayable d)
+    {
+        if(c == openBook)
+        {
+            if(! already)
+            {
+                already = true;
+                biblePage.append(chapter);
+                biblePage.append(spiel);
+            }
+            if(scroll != bkList.getSelectedIndex())
+            {
+                scroll = bkList.getSelectedIndex();
+                spiel.setLabel("");
+                spiel.setText("");
+                dug    = picked = false;
+            }
+            if(! dug)
+            {
+                dug = true;
+                chapter.setMaxSize(Integer.toString(books[scroll].length).length());
+            }
+            else
+            {
+                int sofar = 1;
+                if(! picked)
+                {
+                    picked = true;
+                    try
+                    {
+                        sofar = Integer.parseInt(chapter.getString());
+                    }
+                    catch(Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        sofar = Integer.parseInt(chapter.getString());
+                        ++sofar;
+                    }
+                    catch(Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                    if(sofar >= books[scroll].length) sofar = books[scroll].length;
+                    chapter.setString(Integer.toString(sofar));
+                }
+                spiel.setLabel(bkList.getString(scroll) + " " + chapter.getString());
+                StringBuffer stuff = new StringBuffer();
+                Alert filling = new Alert("Loading " + spiel.getLabel(), "", null, AlertType.INFO);
+                filling.setTimeout(Alert.FOREVER);
+                Display.getDisplay(this).setCurrent(filling, biblePage);
+                int maxlen  = books[scroll][sofar - 1].length;
+                Gauge throbber = new Gauge(null, false, maxlen, 0);
+                filling.setIndicator(throbber);
+                for(int notI = 0; notI < maxlen; ++notI)
+                {
+                    filling.setString(spiel.getLabel() + ":" + Integer.toString(notI + 1));
+                    throbber.setValue(notI);
+                    stuff.append(" (" + Integer.toString(notI + 1) + ")" + books[scroll][sofar - 1][notI]);
+                }
+                spiel.setText(stuff.toString());
+                Display.getDisplay(this).setCurrent(biblePage);
+            }
+        }
+    }
+
+    public void pauseApp()
+    {
+    }
+
+    public void destroyApp(boolean unconditional)
+    {
+    }
+}
