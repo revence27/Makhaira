@@ -6,6 +6,7 @@ Kin
 ---
 This project is of the same Spirit as the ones below:
 
+* [WordProject](http://wordproject.org) by The Holy Bible International.
 * [The Digital Bible Society](http://www.digitalbiblesociety.com/) especially their excellent [inScript](http://www.digitalbiblesociety.com/about/projects.php#inScript) project (which this one is similar-to).
 * [Far-Eastern Broadcasting](http://www.febcanada.org/)
 * [Bibles Unbound](http://www.biblesunbound.com/qry/mc_home.taf) of the great [Voice of the Martyrs](http://www.persecution.com).
@@ -13,7 +14,7 @@ This project is of the same Spirit as the ones below:
 * [SAT-7](http://www.sat7.org/), the best thing any man has ever placed in the skies above the Muslim world.
 * [Open Doors](http://www.opendoors.org/) which trains preachers and sends them (back) to hostile places.
 * [The Chinese House Church Movement](http://en.wikipedia.org/w/index.php?title=Chinese_house_church&oldid=563557936), or what I like to call “Maoist Christianity”. (I call it that because it was formed under the Mao period, and has a style of evangelism very simlar to Maoist guerilla warfare, which has made China the scene of a shocking and unprecedented increase in number of believers.)
-* [Three-Self Patriotic Movement of China](http://www.ccctspm.org). Not only for fairness’ sake, since I have included their brothers above, but also because I actually consider [Three-Self](http://en.wikipedia.org/w/index.php?title=Three-Self_Patriotic_Movement&oldid=566984419) to be perfectly orthodox and truer in its faith than even other legitimately-Christian groups. I probably would be in a foreign congregation of Three-Self is I could find one. :o) More below.
+* [Three-Self Patriotic Movement of China](http://www.ccctspm.org). Not only for fairness’ sake, since I have included their brothers above, but also because I actually consider [Three-Self](http://en.wikipedia.org/w/index.php?title=Three-Self_Patriotic_Movement&oldid=566984419) to be perfectly orthodox and truer in its faith than even other legitimately-Christian groups. I probably would be in a foreign congregation of Three-Self if I could find one. :o) More below.
 
 If you can support _those_ efforts, please do.
 
@@ -39,7 +40,7 @@ So we created this little JME application. It compiles in two stages. (The Ruby 
 
 The first compilation pours the Bible into the source code of the application, generating the main code file, `Makhaira.java`. It then contains the required books as data literals in the code. Special packagings of the Bible can be made: New Testament, for instance, the four gospels, a particular gospel, a particular mix of books, or the whole 66 books. (I move about with a special blend of _Luke_, _John_, _Acts_, and _Romans_; I call it the “Grace Core”, because _Romans_ develops the crucial Grace-Faith doctrine satisfactorily in light of the Lukan histories and _John_.) The packagings are defined in an XML file, which essentilly points out where to get the Zefania XML file out of which to make the Bible application. The configuration can also indicate the words to be used in the menu, since Bibles are in all sorts of languages.
 
-The code that is compile to form the Java source is itself syntactically-correct Java source code. Burried within special comments are pieces of Ruby code which, when executed, print out or return the code that has to replace them in the resulting Java file. So it is actually a compilation from correct Java code that runs badly to correct Java code that runs correctly. The first compilation does this pre-processing.
+The code that is compiled to form the Java source is itself syntactically-correct Java source code. Burried within special comments are pieces of Ruby code which, when executed, print out or return the code that has to replace them in the resulting Java file. So it is actually a compilation from correct Java code that runs badly to correct Java code that runs correctly. The first compilation does this pre-processing.
 
 The resulting `Makhaira.java` has a size that depends directly on the amount of content the resulting Bible will carry.
 

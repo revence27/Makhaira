@@ -1,4 +1,20 @@
 <makhaira>
+    <production name="nteng">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/nteng.xml" book="Book" chapter="Chapter" load="Open" />
+    </production>
+    <production name="4geng">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/4geng.xml" book="Book" chapter="Chapter" load="Open" />
+    </production>
+    <production name="4glug">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/4glug.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
+    </production>
+    <production name="ntlug">
+        <clay href="Makhaira.java.pre" jar="Makhaira.java" />
+        <zefania href="../xml/ntlug.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
+    </production>
     <production name="gclug">
         <clay href="Makhaira.java.pre" jar="Makhaira.java" />
         <zefania href="../xml/gclug.xml" book="Ekitabo" chapter="Essuula" load="Bikkula" />
